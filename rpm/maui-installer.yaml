@@ -1,0 +1,24 @@
+Name         : maui-installer
+Version      : 0.1.0
+Release      : 1
+Group        : System/Base
+License      : GPLv2+
+Summary      : Maui Installer
+Description  : |
+  Maui modules and configuration for Calamares.
+URL          : https://github.com/mauios/maui-installer.git
+SetupOptions : -q -n %{name}-%{version}/upstream
+
+Sources:
+    - "%{name}-%{version}.tar.xz"
+
+Configure    : cmake
+Builder      : make
+
+PkgBR:
+    - cmake
+Requires:
+    - calamares
+
+Files:
+    - "%config %{_sysconfdir}/calamares/*"
