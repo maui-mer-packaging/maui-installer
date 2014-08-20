@@ -15,6 +15,7 @@ Sources:
 Configure    : cmake
 ConfigOptions:
     - -DCMAKE_INSTALL_SYSCONFDIR=%{_sysconfdir}
+    - -DCMAKE_INSTALL_LIBDIR=%{_libdir}
 Builder      : make
 
 PkgBR:
@@ -25,3 +26,5 @@ Requires:
 Files:
     - "%config %{_sysconfdir}/calamares/*"
     - "%{_datadir}/applications/maui-installer.desktop"
+    - "%{_datadir}/calamares/modules/*"
+    - "%{_libdir}/calamares/modules/*"

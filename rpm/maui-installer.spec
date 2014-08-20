@@ -35,7 +35,8 @@ Maui modules and configuration for Calamares.
 # << build pre
 
 %cmake .  \
-    -DCMAKE_INSTALL_SYSCONFDIR=%{_sysconfdir}
+    -DCMAKE_INSTALL_SYSCONFDIR=%{_sysconfdir} \
+    -DCMAKE_INSTALL_LIBDIR=%{_libdir}
 
 make %{?_smp_mflags}
 
@@ -59,5 +60,7 @@ desktop-file-install --delete-original       \
 %defattr(-,root,root,-)
 %config %{_sysconfdir}/calamares/*
 %{_datadir}/applications/maui-installer.desktop
+%{_datadir}/calamares/modules/*
+%{_libdir}/calamares/modules/*
 # >> files
 # << files
