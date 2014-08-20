@@ -33,7 +33,9 @@ Maui modules and configuration for Calamares.
 # >> build pre
 # << build pre
 
-%cmake . 
+%cmake .  \
+    -DCMAKE_INSTALL_SYSCONFDIR=%{_sysconfdir}
+
 make %{?_smp_mflags}
 
 # >> build post

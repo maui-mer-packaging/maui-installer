@@ -13,6 +13,8 @@ Sources:
     - "%{name}-%{version}.tar.xz"
 
 Configure    : cmake
+ConfigOptions:
+    - -DCMAKE_INSTALL_SYSCONFDIR=%{_sysconfdir}
 Builder      : make
 
 PkgBR:
