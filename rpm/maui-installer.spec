@@ -18,6 +18,7 @@ Source0:    %{name}-%{version}.tar.xz
 Source100:  maui-installer.yaml
 Requires:   calamares
 BuildRequires:  cmake
+BuildRequires:  desktop-file-utils
 
 %description
 Maui modules and configuration for Calamares.
@@ -50,8 +51,13 @@ rm -rf %{buildroot}
 # >> install post
 # << install post
 
+desktop-file-install --delete-original       \
+  --dir %{buildroot}%{_datadir}/applications             \
+   %{buildroot}%{_datadir}/applications/*.desktop
+
 %files
 %defattr(-,root,root,-)
 %config %{_sysconfdir}/calamares/*
+%{_datadir}/applications/maui-installer.desktop
 # >> files
 # << files

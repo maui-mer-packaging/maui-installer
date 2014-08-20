@@ -24,3 +24,4 @@ Requires:
 
 Files:
     - "%config %{_sysconfdir}/calamares/*"
+    - "%{_datadir}/applications/maui-installer.desktop"
